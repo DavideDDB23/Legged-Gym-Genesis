@@ -1,0 +1,41 @@
+{
+  "os":  "macOS-15.5-arm64-arm-64bit",
+  "python":  "CPython 3.11.13",
+  "startedAt":  "2025-07-18T19:26:28.560365Z",
+  "args":  [
+    "--task=go2_backflip",
+    "-c"
+  ],
+  "program":  "/Users/davide/Desktop/Legged-Gym-Genesis/genesis_lr/legged_gym/scripts/train.py",
+  "codePath":  "genesis_lr/legged_gym/scripts/train.py",
+  "codePathLocal":  "legged_gym/scripts/train.py",
+  "git":  {
+    "remote":  "https://github.com/DavideDDB23/Legged-Gym-Genesis.git",
+    "commit":  "74931dad55023f5599460a113066bbc473bc1601"
+  },
+  "email":  "deblasio.2082600@studenti.uniroma1.it",
+  "root":  "/Users/davide/Desktop/Legged-Gym-Genesis/genesis_lr/logs/go2_backflip/Jul18_21-26-22_",
+  "host":  "MacBook-Air-di-Davide-953.local",
+  "executable":  "/opt/miniconda3/envs/gym/bin/python",
+  "cpu_count":  8,
+  "cpu_count_logical":  8,
+  "disk":  {
+    "/":  {
+      "total":  "245107195904",
+      "used":  "238661648384"
+    }
+  },
+  "memory":  {
+    "total":  "8589934592"
+  },
+  "apple":  {
+    "name":  "Apple M2",
+    "ecpuCores":  4,
+    "pcpuCores":  4,
+    "gpuCores":  8,
+    "memoryGb":  8,
+    "swapTotalBytes":  "9663676416",
+    "ramTotalBytes":  "8589934592"
+  },
+  "writerId":  "ykv81oe5cmmdbbhv0v44cy0tvtw5dxzr"
+}

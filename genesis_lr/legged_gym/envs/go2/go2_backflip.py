@@ -22,6 +22,13 @@ class GO2Backflip(GO2):
         self.feet_max_height = torch.zeros(
             (self.num_envs, len(self.feet_indices)), device=self.device, dtype=gs.tc_float
         )
+        # History buffer
+        self.obs_history_buf = torch.zeros(
+            self.num_envs,
+            self.cfg.env.num_observations * self.cfg.env.num_history,
+            device=self.device,
+            dtype=torch.float,
+        )
 
     # ---------------------------------------------------------------------
     # Physics-step callback – capture feet positions for reward terms
@@ -37,7 +44,9 @@ class GO2Backflip(GO2):
     # ---------------------------------------------------------------------
     def compute_observations(self):
         phase = torch.pi * self.episode_length_buf[:, None] * self.dt / 2
-        self.obs_buf = torch.cat(
+        
+        # Standard observation
+        obs_buf = torch.cat(
             [
                 self.base_ang_vel * self.obs_scales.ang_vel,               # 3
                 self.projected_gravity,                                    # 3
@@ -54,6 +63,12 @@ class GO2Backflip(GO2):
             ],
             dim=-1,
         )
+
+        # History buffer
+        self.obs_history_buf = torch.cat(
+            [self.obs_history_buf[:, self.cfg.env.num_observations :], obs_buf], dim=1
+        )
+        self.obs_buf = self.obs_history_buf.clone()
 
         if self.num_privileged_obs is not None:
             self.privileged_obs_buf = torch.cat(
@@ -103,9 +118,9 @@ class GO2Backflip(GO2):
             self.global_gravity, inv_desired_base_quat
         )
 
-        return torch.sum(
-            torch.square(self.projected_gravity - desired_projected_gravity), dim=1
-        )
+        orientation_diff = torch.sum(torch.square(self.projected_gravity - desired_projected_gravity), dim=1)
+
+        return orientation_diff
 
     def _reward_ang_vel_y(self):
         current_time = self.episode_length_buf * self.dt
@@ -140,24 +155,17 @@ class GO2Backflip(GO2):
 
     def _reward_feet_distance(self):
         cur_footsteps_translated = self.foot_positions - self.base_pos.unsqueeze(1)
-        footsteps_body = torch.zeros(self.num_envs, 4, 3, device=self.device)
+        footsteps_in_body_frame = torch.zeros(self.num_envs, 4, 3, device=self.device)
         for i in range(4):
-            footsteps_body[:, i, :] = gs_quat_apply(
-                gs_quat_conjugate(self.base_quat), cur_footsteps_translated[:, i, :]
-            )
+            footsteps_in_body_frame[:, i, :] = gs_quat_apply(gs_quat_conjugate(self.base_quat),
+                                                                 cur_footsteps_translated[:, i, :])
 
-        stance_width = 0.3 * torch.zeros([self.num_envs, 1], device=self.device)
-        desired_ys = torch.cat(
-            [
-                stance_width / 2,
-                -stance_width / 2,
-                stance_width / 2,
-                -stance_width / 2,
-            ],
-            dim=1,
-        )
-        return torch.square(desired_ys - footsteps_body[:, :, 1]).sum(dim=1)
-
+        stance_width = 0.3 * torch.zeros([self.num_envs, 1,], device=self.device)
+        desired_ys = torch.cat([stance_width / 2, -stance_width / 2, stance_width / 2, -stance_width / 2], dim=1)
+        stance_diff = torch.square(desired_ys - footsteps_in_body_frame[:, :, 1]).sum(dim=1)
+        
+        return stance_diff
+    
     def _reward_feet_height_before_backflip(self):
         current_time = self.episode_length_buf * self.dt
         foot_height = self.foot_positions[:, :, 2].view(self.num_envs, -1) - 0.02

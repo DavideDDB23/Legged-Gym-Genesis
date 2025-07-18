@@ -1,0 +1,21 @@
+2025-07-18 21:23:37,408 INFO    MainThread:21470 [wandb_setup.py:_flush():80] Current SDK version is 0.21.0
+2025-07-18 21:23:37,409 INFO    MainThread:21470 [wandb_setup.py:_flush():80] Configure stats pid to 21470
+2025-07-18 21:23:37,409 INFO    MainThread:21470 [wandb_setup.py:_flush():80] Loading settings from /Users/davide/.config/wandb/settings
+2025-07-18 21:23:37,409 INFO    MainThread:21470 [wandb_setup.py:_flush():80] Loading settings from /Users/davide/Desktop/Legged-Gym-Genesis/genesis_lr/wandb/settings
+2025-07-18 21:23:37,409 INFO    MainThread:21470 [wandb_setup.py:_flush():80] Loading settings from environment variables
+2025-07-18 21:23:37,409 INFO    MainThread:21470 [wandb_init.py:setup_run_log_directory():703] Logging user logs to /Users/davide/Desktop/Legged-Gym-Genesis/genesis_lr/logs/go2_backflip/Jul18_21-23-09_/wandb/offline-run-20250718_212337-pdp0h57t/logs/debug.log
+2025-07-18 21:23:37,409 INFO    MainThread:21470 [wandb_init.py:setup_run_log_directory():704] Logging internal logs to /Users/davide/Desktop/Legged-Gym-Genesis/genesis_lr/logs/go2_backflip/Jul18_21-23-09_/wandb/offline-run-20250718_212337-pdp0h57t/logs/debug-internal.log
+2025-07-18 21:23:37,409 INFO    MainThread:21470 [wandb_init.py:init():830] calling init triggers
+2025-07-18 21:23:37,409 INFO    MainThread:21470 [wandb_init.py:init():835] wandb.init called with sweep_config: {}
+config: {'_wandb': {}}
+2025-07-18 21:23:37,409 INFO    MainThread:21470 [wandb_init.py:init():871] starting backend
+2025-07-18 21:23:38,051 INFO    MainThread:21470 [wandb_init.py:init():874] sending inform_init request
+2025-07-18 21:23:38,086 INFO    MainThread:21470 [wandb_init.py:init():882] backend started and connected
+2025-07-18 21:23:38,092 INFO    MainThread:21470 [wandb_init.py:init():953] updated telemetry
+2025-07-18 21:23:38,122 INFO    MainThread:21470 [wandb_init.py:init():977] communicating run to backend with 90.0 second timeout
+2025-07-18 21:23:38,427 INFO    MainThread:21470 [wandb_init.py:init():1029] starting run threads in backend
+2025-07-18 21:23:38,517 INFO    MainThread:21470 [wandb_run.py:_console_start():2458] atexit reg
+2025-07-18 21:23:38,517 INFO    MainThread:21470 [wandb_run.py:_redirect():2306] redirect: wrap_raw
+2025-07-18 21:23:38,518 INFO    MainThread:21470 [wandb_run.py:_redirect():2375] Wrapping output streams.
+2025-07-18 21:23:38,518 INFO    MainThread:21470 [wandb_run.py:_redirect():2398] Redirects installed.
+2025-07-18 21:23:38,520 INFO    MainThread:21470 [wandb_init.py:init():1075] run started, returning control to user process
