@@ -1,0 +1,51 @@
+/opt/miniconda3/envs/gym/lib/python3.11/site-packages/torch/utils/_device.py:104: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  return func(*args, **kwargs)
+################################################################################
+                      [1m Learning iteration 0/1000 [0m
+
+                       Computation: 965 steps/s (collection: 48.837s, learning 2.093s)
+               Value function loss: 1.0636
+                    Surrogate loss: 0.0105
+             Mean action noise std: 1.00
+                       Mean reward: 0.00
+               Mean episode length: 22.06
+      Mean episode rew_action_rate: -0.0029
+ Mean episode rew_actions_symmetry: -0.1508
+        Mean episode rew_ang_vel_y: 0.0000
+        Mean episode rew_ang_vel_z: -0.3817
+    Mean episode rew_feet_distance: -0.0104
+Mean episode rew_feet_height_before_backflip: -0.6128
+        Mean episode rew_gravity_y: -0.3472
+   Mean episode rew_height_control: -0.1119
+        Mean episode rew_lin_vel_z: 0.0000
+Mean episode rew_orientation_control: -0.1857
+--------------------------------------------------------------------------------
+                   Total timesteps: 49152
+                    Iteration time: 50.93s
+                        Total time: 50.93s
+                               ETA: 50929.3s
+
+################################################################################
+                      [1m Learning iteration 1/1000 [0m
+
+                       Computation: 1603 steps/s (collection: 28.212s, learning 2.432s)
+               Value function loss: 0.0623
+                    Surrogate loss: -0.0029
+             Mean action noise std: 1.00
+                       Mean reward: 0.00
+               Mean episode length: 46.43
+      Mean episode rew_action_rate: -0.0087
+ Mean episode rew_actions_symmetry: -0.4461
+        Mean episode rew_ang_vel_y: 0.0000
+        Mean episode rew_ang_vel_z: -1.1116
+    Mean episode rew_feet_distance: -0.0289
+Mean episode rew_feet_height_before_backflip: -0.6413
+        Mean episode rew_gravity_y: -1.1861
+   Mean episode rew_height_control: -0.3205
+        Mean episode rew_lin_vel_z: 0.0000
+Mean episode rew_orientation_control: -0.7262
+--------------------------------------------------------------------------------
+                   Total timesteps: 98304
+                    Iteration time: 30.64s
+                        Total time: 81.57s
+                               ETA: 40746.1s

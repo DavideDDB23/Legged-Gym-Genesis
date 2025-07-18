@@ -1,0 +1,6 @@
+{"time":"2025-07-18T21:26:28.843283+02:00","level":"INFO","msg":"stream: starting","core version":"0.21.0"}
+{"time":"2025-07-18T21:26:29.272849+02:00","level":"INFO","msg":"stream: created new stream","id":"pdf4wbt5"}
+{"time":"2025-07-18T21:26:29.27288+02:00","level":"INFO","msg":"stream: started","id":"pdf4wbt5"}
+{"time":"2025-07-18T21:26:29.272943+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"pdf4wbt5"}
+{"time":"2025-07-18T21:26:29.273132+02:00","level":"INFO","msg":"handler: started","stream_id":"pdf4wbt5"}
+{"time":"2025-07-18T21:26:29.273179+02:00","level":"INFO","msg":"sender: started","stream_id":"pdf4wbt5"}

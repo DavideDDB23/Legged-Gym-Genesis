@@ -1,0 +1,26 @@
+/opt/miniconda3/envs/gym/lib/python3.11/site-packages/torch/utils/_device.py:104: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  return func(*args, **kwargs)
+Traceback (most recent call last):
+  File "/Users/davide/Desktop/Legged-Gym-Genesis/genesis_lr/legged_gym/scripts/train.py", line 32, in <module>
+    train(args)
+  File "/Users/davide/Desktop/Legged-Gym-Genesis/genesis_lr/legged_gym/scripts/train.py", line 25, in train
+    ppo_runner.learn(num_learning_iterations=train_cfg.runner.max_iterations, init_at_random_ep_len=True)
+  File "/Users/davide/Desktop/Legged-Gym-Genesis/rsl_rl/rsl_rl/runners/on_policy_runner.py", line 154, in learn
+    self.log(locals())
+  File "/Users/davide/Desktop/Legged-Gym-Genesis/rsl_rl/rsl_rl/runners/on_policy_runner.py", line 219, in log
+    wandb_dict['Loss/kl_mean'] = self.alg.kl_mean
+                                 ^^^^^^^^^^^^^^^^
+AttributeError: 'PPO' object has no attribute 'kl_mean'
+Traceback (most recent call last):
+  File "/Users/davide/Desktop/Legged-Gym-Genesis/genesis_lr/legged_gym/scripts/train.py", line 32, in <module>
+    train(args)
+  File "/Users/davide/Desktop/Legged-Gym-Genesis/genesis_lr/legged_gym/scripts/train.py", line 25, in train
+    ppo_runner.learn(num_learning_iterations=train_cfg.runner.max_iterations, init_at_random_ep_len=True)
+  File "/Users/davide/Desktop/Legged-Gym-Genesis/rsl_rl/rsl_rl/runners/on_policy_runner.py", line 154, in learn
+    self.log(locals())
+  File "/Users/davide/Desktop/Legged-Gym-Genesis/rsl_rl/rsl_rl/runners/on_policy_runner.py", line 219, in log
+    wandb_dict['Loss/kl_mean'] = self.alg.kl_mean
+                                 ^^^^^^^^^^^^^^^^
+AttributeError: 'PPO' object has no attribute 'kl_mean'
+
+[38;5;9m[Genesis] [21:32:27] [ERROR] AttributeError: 'PPO' object has no attribute 'kl_mean'[0m
