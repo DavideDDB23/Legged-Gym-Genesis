@@ -143,7 +143,7 @@ class OnPolicyRunner:
                 start = stop
                 self.alg.compute_returns(critic_obs)
             
-            mean_value_loss, mean_surrogate_loss = self.alg.update()
+            mean_value_loss, mean_surrogate_loss, kl_mean = self.alg.update()
             stop = time.time()
             learn_time = stop - start
 
@@ -151,7 +151,6 @@ class OnPolicyRunner:
             self.tot_time += collection_time + learn_time
 
             if self.log_dir is not None and it % self.log_interval == 0:
-                self.log(locals())
                 self.log(locals())
             if self.record_video:
                 print("Recording video")
@@ -216,7 +215,7 @@ class OnPolicyRunner:
         wandb_dict['Loss/surrogate'] = locs['mean_surrogate_loss']
         # wandb_dict['Loss/entropy_coef'] = locs['entropy_coef']
         wandb_dict['Loss/learning_rate'] = self.alg.learning_rate
-        wandb_dict['Loss/kl_mean'] = self.alg.kl_mean
+        wandb_dict['Loss/kl_mean'] = locs['kl_mean']
         wandb_dict['Loss/mean_noise_std'] = mean_std.item()
         
         wandb_dict['Perf/total_fps'] = fps

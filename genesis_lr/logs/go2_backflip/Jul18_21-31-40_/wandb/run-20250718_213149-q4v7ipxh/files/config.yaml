@@ -1,0 +1,51 @@
+_wandb:
+    value:
+        cli_version: 0.21.0
+        e:
+            lxp4wdqean4g21ixrvoyqo02wvycskxy:
+                apple:
+                    ecpuCores: 4
+                    gpuCores: 8
+                    memoryGb: 8
+                    name: Apple M2
+                    pcpuCores: 4
+                    ramTotalBytes: "8589934592"
+                    swapTotalBytes: "9663676416"
+                args:
+                    - --task=go2_backflip
+                    - -c
+                codePath: genesis_lr/legged_gym/scripts/train.py
+                codePathLocal: legged_gym/scripts/train.py
+                cpu_count: 8
+                cpu_count_logical: 8
+                disk:
+                    /:
+                        total: "245107195904"
+                        used: "238774431744"
+                email: deblasio.2082600@studenti.uniroma1.it
+                executable: /opt/miniconda3/envs/gym/bin/python
+                git:
+                    commit: 2cb4e357241084cea42de519f440edc6ad9aee85
+                    remote: https://github.com/DavideDDB23/Legged-Gym-Genesis.git
+                host: MacBook-Air-di-Davide-953.local
+                memory:
+                    total: "8589934592"
+                os: macOS-15.5-arm64-arm-64bit
+                program: /Users/davide/Desktop/Legged-Gym-Genesis/genesis_lr/legged_gym/scripts/train.py
+                python: CPython 3.11.13
+                root: /Users/davide/Desktop/Legged-Gym-Genesis/genesis_lr/logs/go2_backflip/Jul18_21-31-40_
+                startedAt: "2025-07-18T19:31:49.260150Z"
+                writerId: lxp4wdqean4g21ixrvoyqo02wvycskxy
+        m: []
+        python_version: 3.11.13
+        t:
+            "1":
+                - 1
+            "2":
+                - 1
+            "3":
+                - 13
+            "4": 3.11.13
+            "5": 0.21.0
+            "12": 0.21.0
+            "13": darwin-arm64

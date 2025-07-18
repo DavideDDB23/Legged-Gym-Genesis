@@ -1,0 +1,46 @@
+/opt/miniconda3/envs/gym/lib/python3.11/site-packages/torch/utils/_device.py:104: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  return func(*args, **kwargs)
+################################################################################
+                      [1m Learning iteration 0/1000 [0m
+
+                       Computation: 1438 steps/s (collection: 31.759s, learning 2.400s)
+               Value function loss: 1.0636
+                    Surrogate loss: 0.0105
+             Mean action noise std: 1.00
+                       Mean reward: 0.00
+               Mean episode length: 22.06
+--------------------------------------------------------------------------------
+                   Total timesteps: 49152
+                    Iteration time: 34.16s
+                        Total time: 34.16s
+                               ETA: 34159.0s
+
+################################################################################
+                      [1m Learning iteration 1/1000 [0m
+
+                       Computation: 1332 steps/s (collection: 34.972s, learning 1.904s)
+               Value function loss: 0.0623
+                    Surrogate loss: -0.0029
+             Mean action noise std: 1.00
+                       Mean reward: 0.00
+               Mean episode length: 46.43
+--------------------------------------------------------------------------------
+                   Total timesteps: 98304
+                    Iteration time: 36.88s
+                        Total time: 71.04s
+                               ETA: 35482.2s
+
+################################################################################
+                      [1m Learning iteration 2/1000 [0m
+
+                       Computation: 1094 steps/s (collection: 42.881s, learning 2.035s)
+               Value function loss: 0.0455
+                    Surrogate loss: -0.0039
+             Mean action noise std: 1.01
+                       Mean reward: 6.78
+               Mean episode length: 69.64
+--------------------------------------------------------------------------------
+                   Total timesteps: 147456
+                    Iteration time: 44.92s
+                        Total time: 115.95s
+                               ETA: 38573.2s
